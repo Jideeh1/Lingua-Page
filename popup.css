@@ -1,0 +1,244 @@
+:root {
+    --bg: #ffffff;
+    --text: #0f172a;
+    --muted-text: #475569;
+    --input-bg: #ffffff;
+    --input-border: #94a3b8;
+    --button-bg: #2563eb;
+    --reload-bg: #475569;
+    --toggle-off: #cbd5e1;
+    --toggle-on: #2563eb;
+    --panel-bg: transparent;
+}
+
+body.dark {
+    --bg: #0f172a;
+    --text: #e5e7eb;
+    --muted-text: #94a3b8;
+    --input-bg: #1e293b;
+    --input-border: #475569;
+    --button-bg: #3b82f6;
+    --reload-bg: #64748b;
+    --toggle-off: #475569;
+    --toggle-on: #3b82f6;
+    --panel-bg: #111827;
+}
+
+* {
+    box-sizing: border-box;
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    min-width: 330px;
+    padding: 14px;
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    transition:
+        background-color 0.22s ease-in-out,
+        color 0.22s ease-in-out;
+}
+
+h1 {
+    font-size: 18px;
+    margin: 0 0 14px;
+}
+
+.toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0;
+    min-height: 32px;
+    font-size: 13px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 26px;
+    flex: 0 0 auto;
+}
+
+.switch input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.slider {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    background: var(--toggle-off);
+    border-radius: 999px;
+    transition:
+        background-color 0.2s ease-in-out,
+        opacity 0.2s ease-in-out;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    left: 3px;
+    bottom: 3px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.25);
+    transition: transform 0.2s ease-in-out;
+}
+
+.switch input:checked + .slider {
+    background: var(--toggle-on);
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(20px);
+}
+
+.switch input:focus-visible + .slider {
+    outline: 2px solid #93c5fd;
+    outline-offset: 2px;
+}
+
+.switch input:disabled + .slider {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 7px;
+    margin-top: 4px;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    background: var(--input-bg);
+    color: var(--text);
+    outline: none;
+    transition:
+        background-color 0.22s ease-in-out,
+        color 0.22s ease-in-out,
+        border-color 0.22s ease-in-out;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--button-bg);
+}
+
+.collapsible {
+    margin-top: 10px;
+}
+
+.collapsible-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 8px;
+    padding: 8px 0;
+    border: 0;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    text-align: left;
+    font-size: 13px;
+    transition:
+        color 0.22s ease-in-out,
+        background-color 0.22s ease-in-out;
+}
+
+.chevron {
+    transition: transform 0.22s ease-in-out;
+}
+
+.collapsible.open .chevron {
+    transform: rotate(180deg);
+}
+
+.collapsible-panel {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+        max-height 0.25s ease-in-out,
+        opacity 0.18s ease-in-out;
+}
+
+.collapsible.open .collapsible-panel {
+    opacity: 1;
+}
+
+.collapsible-content {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.buttons {
+    display: flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+button {
+    padding: 5px 20px;
+    border: 0;
+    font-size: 12px;
+    border-radius: 8px;
+    background: var(--button-bg);
+    color: white;
+    cursor: pointer;
+    transition:
+        background-color 0.22s ease-in-out,
+        transform 0.16s ease-in-out,
+        opacity 0.16s ease-in-out;
+}
+
+.buttons button:hover {
+    transform: scale(.95z);
+}
+
+.buttons button:active {
+    transform: scale(.95z);
+    opacity: 0.88;
+}
+
+.buttons button#reload {
+    background: var(--reload-bg);
+}
+
+#host,
+#status {
+    font-size: 12px;
+    color: var(--muted-text);
+    transition: color 0.22s ease-in-out;
+}

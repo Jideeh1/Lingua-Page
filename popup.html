@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Fluent Page</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+
+  <body>
+    <h1>LINGUA PAGES</h1>
+
+    <div class="toggle-row">
+      <span>Enable extension</span>
+      <label class="switch" aria-label="Enable extension">
+        <input id="globalEnabled" type="checkbox" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="toggle-row">
+      <span>Enable on this website</span>
+      <label class="switch" aria-label="Enable on this website">
+        <input id="siteEnabled" type="checkbox" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="toggle-row">
+      <span>Auto translate pages</span>
+      <label class="switch" aria-label="Auto translate pages">
+        <input id="autoTranslate" type="checkbox" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="toggle-row">
+      <span>Dark mode</span>
+      <label class="switch" aria-label="Dark mode">
+        <input id="darkMode" type="checkbox" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <p id="host"></p>
+
+    <label>
+      Target language
+      <select id="targetLang">
+        <option value="en">English (en)</option>
+        <option value="es">Spanish (es)</option>
+        <option value="fr">French (fr)</option>
+        <option value="de">German (de)</option>
+        <option value="it">Italian (it)</option>
+        <option value="pt">Portuguese (pt)</option>
+        <option value="pt-BR">Portuguese — Brazil (pt-BR)</option>
+        <option value="ru">Russian (ru)</option>
+        <option value="ja">Japanese (ja)</option>
+        <option value="ko">Korean (ko)</option>
+        <option value="zh">Chinese (zh)</option>
+        <option value="zh-Hans">Chinese Simplified (zh-Hans)</option>
+        <option value="zh-Hant">Chinese Traditional (zh-Hant)</option>
+        <option value="ar">Arabic (ar)</option>
+        <option value="hi">Hindi (hi)</option>
+        <option value="id">Indonesian (id)</option>
+        <option value="tl">Tagalog / Filipino (tl)</option>
+        <option value="vi">Vietnamese (vi)</option>
+        <option value="th">Thai (th)</option>
+        <option value="nl">Dutch (nl)</option>
+        <option value="pl">Polish (pl)</option>
+        <option value="tr">Turkish (tr)</option>
+        <option value="uk">Ukrainian (uk)</option>
+      </select>
+    </label>
+
+    <label>
+      Provider
+      <select id="provider">
+        <option value="google">Google public translate endpoint</option>
+        <option value="libre">LibreTranslate-compatible endpoint</option>
+      </select>
+    </label>
+    <section class="collapsible" id="libreSettings">
+      <button
+        class="collapsible-trigger"
+        id="libreToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="librePanel"
+      >
+        <span>LibreTranslate settings</span>
+        <span class="chevron" aria-hidden="true">▾</span>
+      </button>
+
+      <div class="collapsible-panel" id="librePanel" aria-hidden="true">
+        <div class="collapsible-content">
+          <label>
+            Endpoint / base URL
+            <input
+              id="libreEndpoint"
+              placeholder="https://libretranslate.com/"
+            />
+          </label>
+
+          <label>
+            API key (Optional)
+            <input id="libreApiKey" type="password" />
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <div class="buttons">
+      <button id="save">Save</button>
+      <button id="translateNow">Translate now</button>
+      <button id="reload">Reload</button>
+    </div>
+
+    <p id="status"></p>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
