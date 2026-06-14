@@ -135,6 +135,10 @@ After making changes:
 - Add per-site target language preferences.
 - Add better translation progress UI.
 
+## Transparency on AI
+
+AI was used to assist with parts of this project’s code and documentation with final review and ownership by Jideeh.
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for details.
