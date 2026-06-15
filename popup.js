@@ -1,3 +1,14 @@
+const DEFAULT_SETTINGS = {
+    enabled: false,
+    disabledHosts: [],
+    autoTranslate: false,
+    darkMode: false,
+    targetLang: "en",
+    provider: "google",
+    libreEndpoint: "https://libretranslate.com/",
+    libreApiKey: ""
+};
+
 let currentHost = "";
 let currentTabId = null;
 let loading = true;
