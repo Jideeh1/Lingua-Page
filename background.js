@@ -1,7 +1,7 @@
 const DEFAULT_SETTINGS = {
-    enabled: true,
+    enabled: false,
     disabledHosts: [],
-    autoTranslate: true,
+    autoTranslate: false,
     darkMode: false,
     targetLang: "en",
     provider: "google",
