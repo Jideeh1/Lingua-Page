@@ -16,7 +16,13 @@ LINGUA PAGES is a Chrome extension that automatically translates webpages into y
 - **LibreTranslate configuration** — set a custom LibreTranslate base URL and optional API key.
 - **Saved settings** — preferences are stored with the Chrome extension storage API.
 
-## Installation
+## Endpoint / Base URL Examples
+
+```https://libretranslate.com/
+https://translate.cutie.dating/
+https://translate.fedilab.app/
+http://localhost:5000/   if locally hosted
+```
 
 ### Load as an unpacked Chrome extension
 
@@ -111,12 +117,12 @@ The extension stores settings such as:
 - LibreTranslate endpoint
 - optional LibreTranslate API key
 
-## Notes
-
-- Some browser pages and Chrome internal pages cannot be modified by extensions.
-- Some websites render content dynamically, so translation may happen after a short delay.
-- LibreTranslate support depends on the specific LibreTranslate server and installed language models.
-- The Google public translate endpoint is not an official paid API integration and may change or rate-limit requests.
+> [!NOTE]
+>
+> - Some browser pages and Chrome internal pages cannot be modified by extensions.
+> - Some websites render content dynamically, so translation may happen after a short delay.
+> - LibreTranslate support depends on the specific LibreTranslate server and installed language models.
+> - The Google public translate endpoint is not an official paid API integration and may change or rate-limit requests.
 
 ## Development
 
