@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Lingua Page",
-  "version": "1.5.2",
+  "version": "1.5.4",
   "description": "Automatically translates websites and lets you disable it per website.",
   "permissions": ["storage", "tabs"],
   "host_permissions": ["http://*/*", "https://*/*"],
